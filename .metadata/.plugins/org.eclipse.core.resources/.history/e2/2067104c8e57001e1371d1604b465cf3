@@ -1,0 +1,16 @@
+package com.openrun.ticket;
+
+@controller
+@RequestMapping("/user")
+public class UserHomeController {
+	
+	@RequestMapping(value = {"", "/"}, method = RequestMapping, GET)
+	public String home(){
+		System.out.println("home()페이지 성공");
+		
+		
+		String nextPAGE = "user/home";
+		
+		return nextPage;
+	}
+}

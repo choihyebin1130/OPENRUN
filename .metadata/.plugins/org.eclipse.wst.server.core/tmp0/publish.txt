@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Wed Sep 20 18:24:58 KST 2023
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\choih\\.m2\\repository\\org\\springframework\\spring-web\\5.2.9.RELEASE\\spring-web-5.2.9.RELEASE.jar=C\:\\openrun\\apache-tomcat-9.0.73\\wtpwebapps\\OPENRUN\\WEB-INF\\lib\\spring-web-5.2.9.RELEASE.jar
+org.eclipse.jst.jee.server\:OPENRUN=C\:\\openrun\\apache-tomcat-9.0.73\\wtpwebapps\\OPENRUN

@@ -1,0 +1,19 @@
+package com.openrun.ticket;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/user")
+public class UserHomeController {
+	
+	@RequestMapping(value = {"", "/"}, method = RequestMapping, GET)
+	public String home(){
+		System.out.println("home()페이지 성공");
+		
+		
+		String nextPage = "user/home";
+		
+		return nextPage;
+	}
+}

@@ -1,0 +1,25 @@
+package com.openrun.ticket.user;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/home/user")
+public class UserController {
+	
+	@Autowired
+	UserService userService;
+	
+	//회원가입
+	//@RuquestMapping(value = "/createAccountFrom", method = RequestMethod.GET)
+	@GetMapping("/createAccountForm")
+	public String createAccountForm() {
+		System.out.println("createAccountForm  성공");
+		String nextPage = "home/user/create-account_form";
+		
+		return nextPage;
+	}
+
+}

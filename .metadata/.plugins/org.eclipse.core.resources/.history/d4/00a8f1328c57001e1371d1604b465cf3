@@ -1,0 +1,16 @@
+package com.openrun.ticket.user;
+
+public class UserVo {
+	
+	int user_no;
+	String u_id;
+	String u_pw;
+	String u_name;
+	int u_birth;
+	String u_address;
+	int u_phone;
+	String u_email;
+	String u_bank_name;
+	int u_account_no;
+	String u_join_date;
+}

@@ -1,0 +1,9 @@
+package com.openrun.ticket.user;
+
+public class UserService {
+	public int createAccountConfirm(UserVo adminMemberVo) {
+		System.out.println ("[AdminMemberService] createAccountConfirm()");
+
+		return 0;
+	}
+}
