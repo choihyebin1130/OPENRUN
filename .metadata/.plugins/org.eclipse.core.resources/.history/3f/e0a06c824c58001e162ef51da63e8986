@@ -1,0 +1,78 @@
+package com.openrun.ticket.user;
+
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/home/user")
+public class UserController {
+	
+	@Autowired
+	UserService userService;
+	
+	//구매자 회원가입
+	//@RequestMapping(value = "/createAccountForm", method = RequestMethod.GET)
+	@GetMapping("/createUerAccountForm")
+	public String ucreateUerAccountForm() {
+		System.out.println("[UserController] createUerAccountForm()");
+		String nextPage = "home/user/create_uer_account_form";
+			
+		return nextPage;
+	}
+	//구매자 회원가입 확인
+	@PostMapping("/createUerAccountConfirm")
+	public String createUerAccountConfirm(UserVo userVo) {
+		System.out.println("[UserController] createUerAccountConfirm()");
+		
+		//기본값을 성공할때 return 되는 페이지
+		String nextPage = "home/user/create_account_ok";
+		
+		int result = userService.createUerAccountConfirm(userVo);
+		//정상적으로 처리 되지 않았을 경우 에러 페이지
+		if (result <= 0) {
+			nextPage = "home/user/create_account_ng";
+		}
+		return nextPage;
+	}
+
+	//판매자 회원가입
+	//@RequestMapping(value = "/createAccountForm", method = RequestMethod.GET)
+	@GetMapping("/createSellerAccountForm")
+	public String createSellerAccountForm() {
+		System.out.println("[UserController] createSellerAccountForm()");
+		String nextPage = "home/user/create_seller_account_form";
+				
+		return nextPage;
+	}
+	//판매자 회원가입 확인
+	@PostMapping("/createSellerAccountConfirm")
+	public String createSellerAccountConfirm(UserVo userVo) {
+		System.out.println("[UserController] createSellerAccountConfirm()");
+			
+		//기본값을 성공할때 return 되는 페이지
+		String nextPage = "home/user/create_account_ok";
+		
+		int result = userService.createSellerAccountConfirm(userVo);
+		//정상적으로 처리 되지 않았을 경우 에러 페이지
+		if (result <= 0) {
+			nextPage = "home/user/create_account_ng";
+		}
+		return nextPage;
+	}
+	
+	//로그인
+	@GetMapping("/loginForm")
+	public String loginForm() {
+		System.out.println ("[UserController] loginForm()");
+		String nextPage = "home/user/login_form";
+		
+		return nextPage;
+	}
+
+
+}
