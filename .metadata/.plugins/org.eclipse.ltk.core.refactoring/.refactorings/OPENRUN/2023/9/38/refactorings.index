@@ -16,3 +16,22 @@
 1695285132727	Move 'create_seller_account_ng.jsp' to 'seller'
 1695285134505	Move 'create_seller_account_ok.jsp' to 'seller'
 1695285138705	Move 'create_account_form.jsp' to 'member'
+1695366515949	Move 'create_account_form.jsp' to 'common'
+1695366530780	Rename resource 'create_account_form.jsp'
+1695368574462	Rename resource 'login_user_form.jsp'
+1695368749396	Rename resource 'user_logi_form.jsp'
+1695370802983	Move folder
+1695370813535	Delete element
+1695370993808	Delete elements
+1695371003314	Delete element
+1695371007769	Delete element
+1695373518214	Rename resource 'encoder_context.xml'
+1695374024940	Copy folder
+1695374035564	Delete element
+1695374043299	Delete elements
+1695374139908	Move 'seller' to 'member'
+1695374141333	Move 'user' to 'member'
+1695428396170	Delete element
+1695428495656	Move 'home.jsp' to 'views'
+1695428510245	Move 'include' to 'home'
+1695428825627	Delete element
