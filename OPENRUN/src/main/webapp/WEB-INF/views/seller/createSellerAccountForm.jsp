@@ -233,7 +233,7 @@ $(document).ready(function() {
 		</form>
 		</div>
 		<div id="footer_nav">
-			<jsp:include page="../footer.jsp" />
+			<jsp:include page="../common/footer.jsp" />
 		</div>
 </body>
 </html>

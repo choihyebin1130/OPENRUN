@@ -130,10 +130,15 @@
 			<div id="cs-board-title">
 				<span>1:1 문의</span>
 				<div>
+					<!-- CUD 버튼 실제 구현할 것인지
 					<div class="cud-btn-box">
 						<button class="cud-btn" id="qna-create-btn">작성</button><button class="cud-btn" id="qna-update-btn">수정</button><button class="cud-btn" id="qna-delete-btn">삭제</button>
-				</div>
-			</div>		
+					</div>
+					 -->
+					 <div class="cud-btn-box">
+						<button class="cud-btn" id="qna-delete-btn">삭제</button>
+					</div>
+				</div>		
 			</div>
 			<div id="cs-board-category">
 				<div id="cs-board-category-nav">

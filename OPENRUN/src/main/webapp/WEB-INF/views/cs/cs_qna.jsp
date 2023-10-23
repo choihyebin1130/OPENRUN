@@ -51,26 +51,26 @@
 	}	
 	
 	function validateForm() {
-	    // 이메일 및 제목 필드의 값을 가져옵니다.
+	    // 이메일 및 제목 필드의 값을 가져옴
 	    var email = document.getElementsByName("email")[0].value.trim();
 	    var title = document.getElementsByName("title")[0].value.trim();
 	    var body = CKEDITOR.instances.textareaBody.getData().trim();
-	    // 이메일 필드가 비어있는지 확인합니다.
+	    // 이메일 필드가 비어있는지 확인
 	    if(email === "") {
 	        alert("이메일을 입력해 주세요.");
-	        return false; // 폼 제출을 막습니다.
+	        return false; // 폼 제출을 차단
 	    }
-	    // 제목 필드가 비어있는지 확인합니다.
+	    // 제목 필드가 비어있는지 확인
 	    if(title === "") {
 	        alert("제목을 입력해 주세요.");
 	        return false; 
 	    }
-		// 본문 필드가 비어있는지 확인합니다.
+		// 본문 필드가 비어있는지 확인
 	    if(body === "") {
 	        alert("내용을 입력해 주세요.");
 	        return false; 
 	    }
-	    // 모든 검사를 통과하면, true를 반환하여 폼 제출을 진행합니다.
+	    // 모든 검사를 통과하면, true를 반환하여 폼 제출을 진행
 	    return true;
 	}
 

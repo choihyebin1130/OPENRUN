@@ -55,17 +55,17 @@
 				<div class="main_content">
 					<div>
 						<div class="product_content">
-							<button class="content_btn" data-id="content" onclick="location.href='productDetail${productVo.p_no}'">공연정보</button>
-						</div>
-						<div class="sell_info">
-							<button class="content_btn" data-id="info" onclick="location.href='productSellInfo${productVo.p_no}">판매정보</button>
-						</div>
-						<div class="review">
-							<button class="select_btn" data-id="review" onclick="location.href='productReview${productVo.p_no}'">관람후기</button>
-						</div>
-						<div class="place_info">
-							<button class="content_btn" data-id="place" onclick="location.href='productPlaceInfo${productVo.p_no}'">장소안내</button>
-						</div>
+			              <button class="select_btn" data-id="content" onclick="location.href='productDetail?p_no=${productVo.p_no}'">공연정보</button>
+			            </div>
+			            <div class="sell_info">
+			              <button class="content_btn" data-id="info" onclick="location.href='productSellInfo?p_no=${productVo.p_no}'">판매정보</button>
+			            </div>
+			            <div class="review">
+			              <button class="content_btn" data-id="review" onclick="location.href='productReview?p_no=${productVo.p_no}'">관람후기</button>
+			            </div>
+			            <div class="place_info">
+			              <button class="content_btn" data-id="place" onclick="location.href='productPlaceInfo?p_no=${productVo.p_no}'">장소안내</button>
+			            </div>
 					</div>
 					<div class="review_DB">
 						<div class="row">
@@ -136,8 +136,6 @@
 							
 							getList();
 							</script>
-	                			</div>
-								
 							</form>
 						</div>
 					</div>

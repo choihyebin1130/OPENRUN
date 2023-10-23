@@ -21,6 +21,6 @@
 				<button class="next_button" onclick="location.href='홈으로 가기''">홈으로 가기</button>
 		</div>
 	</div>
-	 	<jsp:include page="../footer.jsp" />
+	 	<jsp:include page="../common/footer.jsp" />
 	</body>
 </html>

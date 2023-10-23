@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="${css}">
 
 <script>
-    // 공지사항 정보에서 카테고리 값을 가져옵니다.
+    // 해당 공지사항 정보에서 카테고리 값을 가져옵니다.
     var categoryValue = "${notice.category}"; 
 
     // 카테고리 값에 따라 라디오 버튼 선택

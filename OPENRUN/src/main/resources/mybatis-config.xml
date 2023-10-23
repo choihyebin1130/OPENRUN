@@ -15,5 +15,6 @@
 	<typeAlias alias="userVO" type="com.openrun.ticket.vo.UserVO"/>
 	<typeAlias alias="searchVO" type="com.openrun.ticket.vo.SearchVO"/>
 	<typeAlias alias="reservationVO" type="com.openrun.ticket.vo.ReservationVO"/>
+	<typeAlias alias="selectVO" type="com.openrun.ticket.vo.SelectVO"/>
   </typeAliases>
 </configuration>

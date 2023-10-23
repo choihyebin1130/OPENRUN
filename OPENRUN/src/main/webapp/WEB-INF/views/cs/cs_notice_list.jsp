@@ -12,7 +12,6 @@
 </head>
 
 <script>
-
 var totalPages = ${totalPages}; // 총 페이지 수
 var currentPage = ${currentPage}; // 현재 페이지
 
@@ -83,9 +82,6 @@ function updatePageButtons(currentPage) {
             		<a href="#" class="notice-link" data-notice-id="${notice.noticeNo}">${notice.title}</a>
         		</div>
 				<div class="cs-board-list-row-box">${notice.regDate}</div>
-				<!-- 
-				<div class="cs-board-list-row"><a href="${contextPath}/notice/remove?noticeNo=${notice.noticeNo}">삭제하기</a></div>
-				 -->
 			</div>
 		</c:forEach>
 	</div>

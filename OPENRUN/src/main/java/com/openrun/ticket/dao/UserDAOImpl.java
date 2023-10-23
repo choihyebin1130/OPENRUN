@@ -21,9 +21,9 @@ public class UserDAOImpl implements UserDAO{
 	 private SqlSession sqlSession;
 	 
 	 @Override
-	public List<UserVO> user() throws Exception{
-		// TODO Auto-generated method stub
-		return sqlSession.selectList(namespace +".user");
+		public List<UserVO> user() throws Exception{
+			// TODO Auto-generated method stub
+			return sqlSession.selectList(namespace +".user");
 	 }
 	 @Override
 	    public void insertUser(UserVO userVO) throws Exception {

@@ -92,7 +92,7 @@ public class GuideController /*implements GuideController*/ {
         HttpServletResponse response,
         @RequestParam(name = "page", defaultValue = "1") int page // 기본값은 1로 설정
     ) throws Exception {
-        // 한 페이지에 보여질 공지사항 개수
+        // 한 페이지에 보여질 이용가이드 개수
         int pageSize = 10;
         
         // 페이지 번호와 총 페이지 개수를 계산하여 전달
@@ -118,7 +118,7 @@ public class GuideController /*implements GuideController*/ {
         HttpServletResponse response,
         @RequestParam(name = "page", defaultValue = "1") int page // 기본값은 1로 설정
     ) throws Exception {
-        // 한 페이지에 보여질 공지사항 개수
+        // 한 페이지에 보여질 이용가이드 개수
         int pageSize = 10;
         
         // 페이지 번호와 총 페이지 개수를 계산하여 전달
@@ -168,7 +168,7 @@ public class GuideController /*implements GuideController*/ {
     @GetMapping("/cs/guide/detail")
     public String showGuideDetail(HttpServletRequest request, @RequestParam("guideNo") int guideNo, Model model) throws Exception {
         request.setCharacterEncoding("utf-8");
-        // 공지사항 번호로 공지사항 정보를 가져옴
+        // 이용가이드 번호로 이용가이드 정보를 가져옴
         GuideVO guide = guideService.getGuideByGuideNo(guideNo);
         // Model에 데이터를 추가하여 JSP로 전달
         model.addAttribute("guide", guide);
@@ -183,7 +183,7 @@ public class GuideController /*implements GuideController*/ {
         HttpServletResponse response,
         @RequestParam(name = "page", defaultValue = "1") int page // 기본값은 1로 설정
 		) throws Exception {
-	        // 한 페이지에 보여질 공지사항 개수
+	        // 한 페이지에 보여질 이용가이드 개수
 	        int pageSize = 10;
 	        
 	        // 페이지 번호와 총 페이지 개수를 계산하여 전달
@@ -209,7 +209,7 @@ public class GuideController /*implements GuideController*/ {
         HttpServletResponse response,
         @RequestParam(name = "page", defaultValue = "1") int page // 기본값은 1로 설정
     ) throws Exception {
-        // 한 페이지에 보여질 공지사항 개수
+        // 한 페이지에 보여질 이용가이드 개수
         int pageSize = 10;
         
         // 페이지 번호와 총 페이지 개수를 계산하여 전달
@@ -300,7 +300,7 @@ public class GuideController /*implements GuideController*/ {
     @GetMapping("/guide/guideUpdateForm")
     public String showGuideUpdateForm(HttpServletRequest request, @RequestParam("guideNo") int guideNo, Model model) throws Exception {
         request.setCharacterEncoding("utf-8");
-        // 공지사항 번호로 공지사항 정보를 가져옴
+        // 이용가이드 번호로 이용가이드 정보를 가져옴
         GuideVO guide = guideService.getGuideByGuideNo(guideNo);
         // Model에 데이터를 추가하여 JSP로 전달
         model.addAttribute("guide", guide);
@@ -338,5 +338,33 @@ public class GuideController /*implements GuideController*/ {
         }
         return "redirect:/admin/guide";
     }
+    
+    // 메인 배너 테스트
+    @GetMapping("/cs/guide/listGuidesTest")
+    public String listGuidesAllTest(
+        HttpServletRequest request,
+        HttpServletResponse response,
+        @RequestParam(name = "page", defaultValue = "1") int page // 기본값은 1로 설정
+    ) throws Exception {
+        // 한 페이지에 보여질 이용가이드 개수
+        int pageSize = 10;
+        
+        // 페이지 번호와 총 페이지 개수를 계산하여 전달
+        int totalCount = guideService.selectTotalGuideCount();
+        int totalPages = (int) Math.ceil((double) totalCount / pageSize);
+        request.setAttribute("currentPage", page);
+        request.setAttribute("totalPages", totalPages);
+
+        // 페이지 시작점과 끝점을 계산
+        int start = (page - 1) * pageSize;
+        int end = start + pageSize;
+
+        List<GuideVO> guidesList = guideService.selectAllGuideListWithPagination(start, pageSize);
+        request.setAttribute("guidesList", guidesList);
+
+        // common/main_banner.jsp 페이지로 포워딩
+        return "common/main_banner";
+    }
+    
     
 }

@@ -12,12 +12,10 @@
 <link rel="stylesheet" href="${css}">
 
 <script>
-var totalPages = ${totalPages}; // 총 페이지 수
-var currentPage = ${currentPage}; // 현재 페이지
-</script>
 
-<script>
+	var categoryNo = null; 
 
+	// 1. 상세 페이지
 	$(document).on('click', '.faq-link', function() {
 	    const faqId = $(this).data('faq-id');
 	    
@@ -35,13 +33,8 @@ var currentPage = ${currentPage}; // 현재 페이지
 	        }
 	    });
 	});
-
-	// 페이지 로드 시 초기 버튼 상태 업데이트
-	$(document).ready(function() {
-	    updatePageButtons(currentPage);
-	});
-		
 	
+	// 2. 각 카테고리 버튼에 대한 클릭 이벤트 리스너 추가	
 	$(document).on('click', '#faq-category-btn', function(event) {
 	    event.preventDefault(); // 기본 동작 중지 : 해시('#')이 추가되지 않고 주소 유지 가능
 	    const faqId = $(this).data('id');

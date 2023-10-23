@@ -164,6 +164,6 @@ $(document).ready(function() {
 	</div>
 </div>
 	
-	 	<jsp:include page="../footer.jsp" />
+	 	<jsp:include page="../common/footer.jsp" />
 </body>
 </html>

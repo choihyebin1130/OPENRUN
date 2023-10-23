@@ -53,6 +53,14 @@ form {
 	text-align: left;
 }
 
+#qna-q-body {
+	padding-top: 10px;
+}
+
+.contour-line {
+	height: 10vh;
+}
+
 textarea {
 	width: 100%;
 	height: 100%;

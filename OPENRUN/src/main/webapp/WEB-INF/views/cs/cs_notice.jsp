@@ -17,8 +17,7 @@
 	$(document).on('click', '.notice-link', function() {
 		event.preventDefault(); // 기본 동작 중지 : 해시('#')이 추가되지 않고 주소 유지 가능
 	    const noticeNo = $(this).data('notice-id');
-	    
-	    // Ajax 요청을 보냅니다.
+	    // Ajax 요청을 보냄
 	    $.ajax({
 	        type: 'GET',
 	        url: '/ticket/cs/notice/detail?noticeNo=' + noticeNo, // 공지사항 상세 정보를 가져오는 URL로 변경
@@ -33,7 +32,7 @@
 	});
 
 	
-	// 각 카테고리 버튼에 대한 클릭 이벤트 리스너 추가
+	// 2. 각 카테고리 버튼에 대한 클릭 이벤트 리스너 추가
 	$(document).on('click', '#notice-category-btn', function(event) {
 	    event.preventDefault(); // 기본 동작 중지 : 해시('#')이 추가되지 않고 주소 유지 가능
 	    const noticeId = $(this).data('id');

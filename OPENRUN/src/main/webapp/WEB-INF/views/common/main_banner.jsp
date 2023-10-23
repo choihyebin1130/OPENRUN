@@ -67,28 +67,17 @@ $(".image_wrap").each(function(i, obj){
 	 -->
 	<div class="ls_wrap">
 				<div class="ls_div_subject">
-					티켓 랭킹
+					티켓 랭킹2
 				</div>
 				<div class="ls_div">
-					<c:forEach items="${ls}" var="ls">
-						<a href="/goodsDetail/${ls.bookId}">
+					<c:forEach var="guide" items="${guidesList}">
 							<div class="ls_div_content_wrap">
 								<div class="ls_div_content">
-									<div class="image_wrap" data-bookid="${ls.imageList[0].bookId}" data-path="${ls.imageList[0].uploadPath}" data-uuid="${ls.imageList[0].uuid}" data-filename="${ls.imageList[0].fileName}">
-										<img>
-									</div>				
-									<div class="ls_category">
-										${ls.cateName}
-									</div>
-									<div class="ls_rating">
-										${ls.ratingAvg}
-									</div>
-									<div class="ls_bookName">
-										${ls.bookName}
-									</div>							
+									<div class="image_wrap" data-bookid="" data-path="" data-uuid="" data-filename="">
+										<img src="${pageContext.request.contextPath}${guide.imgPath}" alt="${guide.imgOriginName}" class="guide-image"/>
+									</div>									
 								</div>
-							</div>
-						</a>					
+							</div>					
 					</c:forEach>					
 				</div>
 			</div>

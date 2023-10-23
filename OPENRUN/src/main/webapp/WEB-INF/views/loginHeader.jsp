@@ -41,7 +41,7 @@
 		<ul id="user-nav">
 			<li class="user-nav-item">
 			    <button class="user-nav-btn" id="login" onclick="location.href='exLoginOut'">로그아웃</button>
-				<button class="user-nav-btn" id="join" onclick="location.href=''">마이페이지</button>
+				<button class="user-nav-btn" id="join" onclick="location.href='/ticket/product/admin/registerProductForm'">마이페이지</button>
 				<button class="user-nav-btn" id="as" onclick="location.href='cs/main'">고객센터</button>
 			</li>	
 		</ul>
@@ -84,7 +84,7 @@
 	
 	<div id="main-title">
 		<div id="main-logo">
-			<img src="${logo}" alt="로고" />
+			<img src="${logo}" alt="로고"  onclick="location.href='/ticket'"/>
 		</div>
 		<div>
 		</div>

@@ -86,12 +86,12 @@ $(document).ready(function() {
 		
 					<button class="add_button" id="find_id" onclick="location.href='sellerFindId'">아이디찾기</button>
 					<button class="add_button" id="find_password" onclick="location.href='sellerFindPw'">비밀번호찾기</button>
-					<button class="add_button" id="join" onclick="location.href='/ticket'">회원가입</button>
+					<button class="add_button" id="join" onclick="location.href='/ticket/joinMember'">회원가입</button>
 			</div>	
 		</div>
 		</div>
 
-		<jsp:include page="../footer.jsp" />
+		<jsp:include page="../common/footer.jsp" />
 
 </body>
 </html>

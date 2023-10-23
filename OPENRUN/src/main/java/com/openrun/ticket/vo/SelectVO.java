@@ -1,39 +1,44 @@
 package com.openrun.ticket.vo;
 
-import java.sql.Date;
-
 public class SelectVO {
 	
 	private int ticketNo;
 	private int categoryNo;
 	private String ticketName;
-	private String body;
-	private Date regDate;
 
-	public NoticeVO() {
+	public SelectVO() {
 		
 	}
 
-	public NoticeVO(int noticeNo, int categoryNo, String category, String title, String body, Date regDate) {
-		this.noticeNo = noticeNo;
+	public SelectVO(int ticketNo, int categoryNo, String ticketName) {
+		this.ticketNo = ticketNo;
 		this.categoryNo = categoryNo;
-		this.category = category;
-		this.title = title;
-		this.body = body;
-		this.regDate = regDate;
+		this.ticketName = ticketName;
 	}
 
-	/* 상품 id */
-	private int bookId;
+	public int getTicketNo() {
+		return ticketNo;
+	}
+
+	public void setTicketNo(int ticketNo) {
+		this.ticketNo = ticketNo;
+	}
+
+	public int getCategoryNo() {
+		return categoryNo;
+	}
+
+	public void setCategoryNo(int categoryNo) {
+		this.categoryNo = categoryNo;
+	}
+
+	public String getTicketName() {
+		return ticketName;
+	}
+
+	public void setTicketName(String ticketName) {
+		this.ticketName = ticketName;
+	}
+
 	
-	/* 상품 이름 */
-	private String bookName;
-	
-	/* 카테고리 이름 */
-	private String cateName;
-	
-	private double ratingAvg;	
-	
-	/* 상품 이미지 */
-	private List<AttachImageVO> imageList;
 }

@@ -45,6 +45,7 @@
         where CATEGORY_NO=#{categoryNo}
     </select>
 	
+	<!-- 공지사항 상세 조회 -->
     <select id="getNoticeByNoticeNo" resultMap="noticeResult" parameterType="int">
         	select * from notice where NOTICE_NO=#{noticeNo}
     </select>

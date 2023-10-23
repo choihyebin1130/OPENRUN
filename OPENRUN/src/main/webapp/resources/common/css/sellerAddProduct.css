@@ -5,7 +5,7 @@
 	
 	#section_wrap {
 		font-family: 'SUITE';
-		width: 1200px;
+		width: 1080px;
 		margin: 0 auto;
 		display : flex;
 		}
@@ -28,7 +28,7 @@
 		}
 		
 	#section_wrap .register_product_form {
-		width: 516px;
+		width: 550px;
 		margin: 0 auto;
 		text-align: center;
 		flex : auto;
@@ -36,7 +36,7 @@
 		}
 	
 	#section_wrap .register_product_form input {
-		width: 250px;
+		width: 266px;
 		margin: 3px;
 		font-family : 'SUITE';
 		padding : 2px 5px;
@@ -54,7 +54,7 @@
 	}
 	
 	#section_wrap .register_product_form select {
-		width: 250px;
+		width: 266px;
 		margin: 3px;
 		font-family : 'SUITE';
 		padding : 2px 5px;
@@ -63,7 +63,7 @@
 	/* 제목 입력란 510px 너비 */
 		
 	#section_wrap .inputTitle input{
-		width : 510px;
+		width : 546px;
 	}
 	
 	/* 등록/취소 버튼 css */
@@ -139,4 +139,5 @@
 	  clip:rect(0,0,0,0);
 	  border: 0;
 	}
+
 	

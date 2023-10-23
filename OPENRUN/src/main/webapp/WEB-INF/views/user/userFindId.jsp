@@ -100,7 +100,7 @@ $(document).ready(function() {
                 	console.log("u_name:", u_name); 
                     window.location.href = "userFindIdOk?u_name=" + encodeURIComponent(response.u_name) + "&u_id=" + encodeURIComponent(response.u_id);
                 } else {
-                    alert("입력하신 정보와 맞는 아이디가 없습니다")
+                    alert("아이디 찾기 실패")
                 }
             }
         });

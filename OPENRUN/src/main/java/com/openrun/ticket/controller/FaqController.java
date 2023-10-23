@@ -77,7 +77,7 @@ public class FaqController /*implements FaqController*/ {
 	    List<FaqVO> faqsList = faqService.selectAllFaqListWithPagination(start, pageSize);
 	    request.setAttribute("faqsList", faqsList);
 	
-	    return "cs/cs_faq";
+	    return "cs/cs_faq_list";
 	}
 	
 	// 3. [일반] 고객센터 - FAQ 목록 - 카테고리 필터링

@@ -48,7 +48,7 @@
 	        <tr>
 	            <td class="input-content" id="qna-q-body" colspan="4">${qna.body}</td> 
 	        </tr>
-
+			<tr class="contour-line"></tr>
      		<tr>
 				<td class="input-title" colspan="4">답변</td>
 			</tr>
@@ -76,7 +76,7 @@
 	        
 	        <tr align="right" valign="middle">
 	            <td colspan="4">
-	                <input class="form-btn" type="submit" value="접수" >
+	                <input class="form-btn" type="submit" value="전송" >
 	                <input class="form-btn" id="form-cancel-btn" type="button" value="취소" onclick="goBack()">            
 	            </td>
 	        </tr>

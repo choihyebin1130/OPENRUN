@@ -17,7 +17,7 @@ public class LocationDAO {
 	public LocationVO selectLocation(int p_no) {
 		System.out.println("[LocationDAO] selectLocation()");
 		
-		String sql = "SELECT * FROM location LEFT OUTER JOIN product ON (location.l_name = product.p_hall) = ?";
+		String sql = "SELECT location.* FROM location INNER JOIN product ON location.l_name = product.p_hall WHERE product.p_no = ?";
 		
 		List<LocationVO> locationVos = null;
 		
