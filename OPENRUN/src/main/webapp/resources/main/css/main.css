@@ -1,0 +1,56 @@
+html {
+    overflow-y: scroll; /* 항상 세로 스크롤바를 보이게 합니다. */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+	width: 1080px;
+	display: grid;
+	grid-template-columns: 25% 75%;
+	margin: 20px auto 40px auto;
+    vertical-align: top; 
+}
+
+body::-webkit-scrollbar {
+    width: 5px; /* 원하는 스크롤바의 폭을 설정 */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: transparent; /* 스크롤바 색상을 투명하게 설정 */
+}
+
+body:hover::-webkit-scrollbar-thumb {
+    background-color: #6E63CF; /* 마우스 호버 시 스크롤바 색상 설정 */
+}
+
+#view {
+	height: fit-content;
+	max-width: 100%;
+}
+
+.main-banner-container {
+	font-family: 'SUITE';
+	maxwidth: 100%;
+	padding: 50px 0;
+    background-color: #ffffff;
+    vertical-align: top;
+}
+	
+.main-banner-container-sub {
+	width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: top;
+    align-items: center;
+    text-align: center;
+}
+
+#main-banner-title {
+	font-weight: 900;
+	font-size: 36px;
+	margin-bottom: 50px;
+}

@@ -35,3 +35,9 @@
 1695428495656	Move 'home.jsp' to 'views'
 1695428510245	Move 'include' to 'home'
 1695428825627	Delete element
+1695430214478	Delete element
+1695434514903	Delete element
+1695442073538	Move 'encoder-context.xml' to 'appServlet'
+1695442076957	Move 'root-context.xml' to 'appServlet'
+1695442109356	Move 'encoder-context.xml' to 'spring'
+1695442112300	Move 'root-context.xml' to 'spring'
