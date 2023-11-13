@@ -108,7 +108,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.result === '1') {
                 	 console.log("u_id:", response.u_id); 
-                	 alert("비밀번호 성공")
+                	 alert("비밀번호 찾기 성공")
                
                 	 window.location.href = "userPwChange?u_id=" + encodeURIComponent(response.u_id);
                 } else {
@@ -131,31 +131,31 @@ $(document).ready(function() {
 	<div id="find_pw_container">
 		<div class="find_pw_container_sub">
 			<div class="find_input_container">아이디
-				<input class="input_text" type="text" id="u_id" placeholder="6~20자 영문, 숫자">
+				<input class="input_text" type="text" id="u_id" placeholder="6~20자 영문, 숫자" autocomplete="off">
 			</div>
 			<div class="find_explanation">영문으로 시작하는 6~20자 영문(소문자), 숫자만 사용 가능합니다</div>
 		</div>
 		<div class="find_pw_container_sub">
 				<div class="find_input_container">이름
-					<input class="input_text" type="text" id="u_name"><br>
+					<input class="input_text" type="text" id="u_name" autocomplete="off"><br>
 				</div>
 		</div>
 		<div class="find_pw_container_sub">
 			<div class="find_input_container">생년월일
-				<input class="input_text" type="text" id="u_birth" placeholder="8자리 숫자">
+				<input class="input_text" type="text" id="u_birth" placeholder="8자리 숫자" autocomplete="off">
 			</div>
 			<div class="find_explanation">ex)YYYYMMDD 형식으로 입력해 주세요</div>
 		</div>
 		<div class="find_pw_container_sub">
 			<div class="find_input_container">이메일
-				<input class="input_text" type="text" id ="u_email" placeholder="ex)****@naver.com">
+				<input class="input_text" type="text" id ="u_email" placeholder="ex)****@naver.com"  autocomplete="off">
 				<button type="button" id="emailSendButton" >보내기</button>
 			</div>
 			<div class="find_explanation">이메일 형식으로 입력해주세요</div>
 		</div>
 		<div class="find_pw_container_sub">
 			<div class="find_input_container">인증번호
-				<input class="input_text" type="text" id="u_email_check">
+				<input class="input_text" type="text" id="u_email_check" autocomplete="off">
 				<button type="button" id="emailCheckButton" >확인하기</button>
 			</div>
 		</div>
@@ -165,7 +165,7 @@ $(document).ready(function() {
 		<div id="add_button_container">
 			<button class="add_button" id="find_login" onclick="location.href='/ticket/loginForm'">로그인</button>
 			<button class="add_button" id="find_password" onclick="location.href='userFindId'">아이디찾기</button>
-			<button class="add_button" id="find_join" onclick="location.href='/ticket'">회원가입</button>
+			<button class="add_button" id="find_join" onclick="location.href='/ticket/joinMember'">회원가입</button>
 		</div>	
 	</div>
 </div>

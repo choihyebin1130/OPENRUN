@@ -9,8 +9,6 @@
 <link href="${css}" rel="stylesheet">
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <title>구매자 로그인</title>
-</head>
-<body>
 <script>
 $(document).ready(function() {
     $(document).on("click", "#loginUserButton", function(e) {
@@ -40,11 +38,11 @@ $(document).ready(function() {
                         type: "POST",
                         url: "loginUser",
                         data: { u_id: u_id, u_pw: u_pw },
-                        dataType: "text",
-                        success: function(result) {
-                            if (result === '1') {
+                        dataType: "json",
+                        success: function(response) {
+                            if (response.result === '1') {
                                 alert("로그인 성공");
-                                window.location.href = "exLoginOk";
+                                window.location.href = "/ticket";
                             } else {
                                 alert("로그인 실패. 아이디 또는 비밀번호가 일치하지 않습니다.");
                             }
@@ -56,6 +54,8 @@ $(document).ready(function() {
     });
 });
 </script>
+</head>
+<body>
 	<jsp:include page="../loginHeader.jsp" />
 	
 	<div id="main_nav">
@@ -65,10 +65,10 @@ $(document).ready(function() {
 		<form name="loginUser" action="loginUser" method="POST">
 		<div id="login_form_container_sub">
 			<div class="login_input_container" >아이디
-				<input class="input_text" type="text" name="u_id"  id="u_id" placeholder="6~20자 영문, 숫자">
+				<input class="input_text" type="text" name="u_id"  id="u_id" placeholder="6~20자 영문, 숫자" autocomplete="off">
 			</div>
 			<div class="login_input_container">비밀번호
-				<input class="input_text" type="password"  name="u_pw" id="u_pw" placeholder="8~12자 영문, 숫자, 특수문자"><br>
+				<input class="input_text" type="password"  name="u_pw" id="u_pw" placeholder="8~12자 영문, 숫자, 특수문자" ><br>
 			</div>
 			<button class="next_button" id="loginUserButton" type="submit">로그인하기</button>
 		</div>

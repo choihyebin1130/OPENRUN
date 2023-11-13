@@ -27,9 +27,9 @@ function sellerPwChange() {
         return false;
     } else if (!passwordRegex.test(form.s_new_pw.value)) {
         alert('비밀번호는 8~12자의 영문, 숫자, 특수문자 중 2가지 이상으로만 가능합니다');
-        form.u_pw.focus();
-        form.u_pw.value = "";
-        form.u_pw_again.value = "";
+        form.s_pw.focus();
+        form.s_pw.value = "";
+        form.s_pw_again.value = "";
         return false;
 	}else if (form.s_new_pw.value !== form.s_new_pw_again.value) {
         alert('새로운 비밀번호와 새로운 비밀번호 확인의 입력값이 다릅니다');
@@ -78,11 +78,10 @@ $(document).ready(function() {
     });
 });
 </script>
-	<jsp:include page="../header.jsp" />
+	<jsp:include page="../common/header.jsp" />
 	
 	<div id="main_nav">
 	<div id="main_nav_container">
-	<jsp:include page="../seller/seller_nav_side.jsp" />
 	<div id="main_nav_sub">
 		<div id="main_title">비밀번호 변경</div>
 		<div id="main_content">회원님의 정보를 안전하게 보호하기 위해 비밀번호를 다시 한번 확인합니다.</div>
@@ -91,15 +90,17 @@ $(document).ready(function() {
 			<div id="modify_pw_nav">
 			
 			<form name="sellerPwChange" method="POST" action="/sellerPwChange">
+			<div id="modify_pw_nav_sub">
 				<div id="modify_pw_content">
 					<div id="modify_pw_content1">새로운 비밀번호
-						<input class="input_text" type="text" id="s_new_pw" placeholder="8~12자 영문, 숫자, 특수문자"><br>
+						<input class="input_text" type="password" id="s_new_pw" placeholder="8~12자 영문, 숫자, 특수문자"><br>
 					</div>
 					<div id="modify_pw_content2">새로운 비밀번호 확인
-						<input class="input_text" type="text" id="s_new_pw_again" placeholder="8~12자 영문, 숫자, 특수문자"><br>
+						<input class="input_text" type="password" id="s_new_pw_again" placeholder="8~12자 영문, 숫자, 특수문자"><br>
 					</div>
 				</div>
 				<button class="next_button" id="pwChangeButton"  onclick="return false;">확인</button>
+			</div>
 			</form>
 			</div>
 		</div>

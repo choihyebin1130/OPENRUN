@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.dao.DataAccessException;
 
 import com.openrun.ticket.vo.SellerVO;
+import com.openrun.ticket.vo.UserVO;
 
 public class SellerDAOImpl implements SellerDAO {
 
@@ -96,15 +97,23 @@ public class SellerDAOImpl implements SellerDAO {
 			    return result;
 		 }
 		 @Override
-		 public String pwChange(SellerVO sellerVO) {
+		 public int pwChange(SellerVO sellerVO) {
 			
-			 return sqlSession.selectOne(namespace + ".pwChange", sellerVO);
-			 
-			 
+			 return sqlSession.selectOne(namespace + ".pwChange", sellerVO);		 
 		 }
 		 @Override
-		 public SellerVO withdrawal(SellerVO sellerVO) {	
+		 public int withdrawal(SellerVO sellerVO) throws Exception{	
 			 
-			 return sqlSession.selectOne(namespace + ".withdrawal", sellerVO);
+			 return sqlSession.delete(namespace + ".withdrawal", sellerVO);
 		 }
-	}
+		 @Override 
+		 public SellerVO modificationPwCheck(SellerVO sellerVO) {
+			 return sqlSession.selectOne(namespace + ".modificationPwCheck", sellerVO);
+		 }
+		 @Override
+		 public int modification(SellerVO sellerVO) {
+			
+			 return sqlSession.update(namespace + ".modification", sellerVO);
+
+		 }
+}

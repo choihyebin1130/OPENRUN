@@ -1,11 +1,15 @@
 package com.openrun.ticket.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.context.annotation.Primary;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
+import com.openrun.ticket.vo.ReservationVO;
 import com.openrun.ticket.vo.UserVO;
 
 @Repository
@@ -50,9 +54,81 @@ public class UserDAOImpl implements UserDAO{
 	 }
 	 
 	 @Override
-	 public String pwChange(UserVO userVO) {
+	 public int pwChange(UserVO userVO) {
 		
-		 return sqlSession.selectOne(namespace + ".pwChange", userVO);
+		 return sqlSession.update(namespace + ".pwChange", userVO);
  
 	 }
+	 @Override
+	 public int withdrawal(UserVO userVO) throws Exception{	
+		 
+		 return sqlSession.delete(namespace + ".withdrawal", userVO);
+	 }
+	 @Override 
+	 public UserVO modificationPwCheck(UserVO userVO) {
+		 return sqlSession.selectOne(namespace + ".modificationPwCheck", userVO);
+	 }
+	 @Override
+	 public int modification(UserVO userVO) {
+		
+		 return sqlSession.update(namespace + ".modification", userVO);
+
+	 }
+	 @Override
+	 public List<Map<String, Object>> listWithPagination(int start, int pageSize) throws DataAccessException {
+	     Map<String, Integer> params = new HashMap<>();
+	     params.put("start", start);
+	     params.put("pageSize", pageSize);
+	     return sqlSession.selectList("com.openrun.ticket.reservationMapper.listWithPagination", params);
+	 }
+	 @Override
+	 public int reservationCount() throws DataAccessException {
+	     return sqlSession.selectOne("com.openrun.ticket.reservationMapper"+".reservationCount");
+	 }
+	 @Override
+	 public int reservationCategoryCount(String p_category) throws DataAccessException {
+	     return sqlSession.selectOne("com.openrun.ticket.reservationMapper"+".reservationCategoryCount");
+	 }
+	 @Override
+	 public List<Map<String, Object>> lisCategorytWithPagination(String p_category, int start, int pageSize) throws DataAccessException {
+	     Map<String, Object> params = new HashMap<>();
+	     params.put("start", start);
+	     params.put("pageSize", pageSize);
+	     params.put("p_category", p_category);
+	     return sqlSession.selectList("com.openrun.ticket.reservationMapper.lisCategorytWithPagination", params);
+	 }
+	 @Override
+	 public List<Map<String, Object>> reservationListDetail(int r_no) throws DataAccessException {
+		 
+	     return sqlSession.selectList("com.openrun.ticket.reservationMapper.reservationListDetail", r_no);
+	 }
+	 @Override
+	 public List<Map<String, Object>> cancelListWithPagination(int start, int pageSize) throws DataAccessException {
+	     Map<String, Integer> params = new HashMap<>();
+	     params.put("start", start);
+	     params.put("pageSize", pageSize);
+	     return sqlSession.selectList("com.openrun.ticket.reservationMapper.cancelListWithPagination", params);
+	 }
+	 @Override
+	 public int cancelReservationCount() throws DataAccessException {
+	     return sqlSession.selectOne("com.openrun.ticket.reservationMapper"+".cancelReservationCount");
+	 }
+	 @Override
+	 public int cancelReservationCategoryCount(String p_category) throws DataAccessException {
+	     return sqlSession.selectOne("com.openrun.ticket.reservationMapper"+".cancelReservationCategoryCount");
+	 }
+	 @Override
+	 public List<Map<String, Object>> cancelLisCategorytWithPagination(String p_category, int start, int pageSize) throws DataAccessException {
+	     Map<String, Object> params = new HashMap<>();
+	     params.put("start", start);
+	     params.put("pageSize", pageSize);
+	     params.put("p_category", p_category);
+	     return sqlSession.selectList("com.openrun.ticket.reservationMapper.cancelLisCategorytWithPagination", params);
+	 }
+	 @Override
+	 public List<Map<String, Object>> cancelReservationListDetail(int r_no) throws DataAccessException {
+		 
+	     return sqlSession.selectList("com.openrun.ticket.reservationMapper.cancelReservationListDetail", r_no);
+	 }
+	 
 }

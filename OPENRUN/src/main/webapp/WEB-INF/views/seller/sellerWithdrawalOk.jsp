@@ -16,45 +16,60 @@ $(document).ready(function() {
     $(document).on("click", "#sellerWithdrawalButton", function(e) {
         e.preventDefault();
         
+        var s_id = $("#s_id").val();
         var s_pw = $("#s_pw").val();
-        var seller_no = ${sellerLoginResult.seller_no};
         
-        console.log("s_pw:", s_pw); 
-        console.log("seller_no:", seller_no);
-        
+        if (s_pw === '') {
+            alert('비밀번호를 입력해주세요.');
+            return;
+        }
+		var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,12}$/;
+		
+		if (!passwordRegex.test(s_pw)) {
+	        alert('비밀번호는 8~12자의 영문, 숫자, 특수문자 중 2가지 이상으로만 가능합니다');
+	        return;
+		}
+        var dataToSend = {
+                s_pw: s_pw,
+                s_id: s_id
+            };
         $.ajax({
-            type: "POST",
-            url: "withdrawalOk",
-            data: { s_pw:s_pw, seller_no:seller_no }, 
-            contentType: "json",
-            success: function(result) {
-                if (result === '1'){
-                    alert("정상적으로 탈퇴 되었습니다");
-                    window.location.href = "/ticket";
+        	url: "withdrawalOk",
+        	type: "POST",
+        	data: dataToSend,
+        	cache: false,
+        	dataType: "text",
+        	success: function(result) {
+        		if (result === '1') {
+					alert('회원 탈퇴 성공');
+					console.log('회원 탈퇴 성공');
+                 	window.location.href = "/ticket"
                 } else {
-                    alert("탈퇴 실패");
-                }
-            }
+                    alert('회원 탈퇴 실패');
+                    console.log('회원 탈퇴 실패');
+                 }
+              }
         });
     });
 });
 
 </script>
-<jsp:include page="../header.jsp" />
+<jsp:include page="../common/header.jsp" />
 	<div id="main_nav">
 	<div id="main_nav_container">
 		<jsp:include page="../seller/seller_nav_side.jsp" />
 		<div id="main_nav_sub">
 			<div id="main_title">회원 탈퇴 비밀번호 확인</div>
 			<div id="main_content_sub">
-			<form name="sellerWithdrawal" action="<c:url value='/product/admin/withdrawalOk' />" method="POST" >
+			<form id="sellerWithdrawal" name="sellerWithdrawal" action="<c:url value='/product/admin/withdrawalOk' />" method="POST" >
 				<div id="withdrawal_nav">
 					<div id="withdrawal_content">
+					<input class="input_text" type="hidden" id="s_id" name="s_id" value="${sellerLoginResult.s_id}">
 						<div id="withdrawal_content1">비밀번호
-							<input class="input_text" type="password" id="s_pw" name="s_pw" placeholder="8~12자 영문, 숫자, 특수문자"><br>
+							<input class="input_text" type="password" id="s_pw" name="s_pw" placeholder="8~12자 영문, 숫자, 특수문자">
 						</div>
 					</div>
-					<button class="next_button" id="sellerWithdrawalOkButton" type="submit">확인</button>
+					<button class="next_button" id="sellerWithdrawalButton" type="submit">확인</button>
 				</div>
 			</form>
 			</div>
